@@ -328,15 +328,15 @@ userRights.coffee
 privateTraffic.coffee
 ```
 
-Do not use any `-test` suffixes for naming test files:
+Use `-test` suffixes for naming test files:
 
 ```
-tests/userRights.coffee # Yes
-tests/userRights-test.coffee # No
+tests/userRights-test.coffee # Yes
+tests/userRights.coffee # No
 tests/userRightsTest.coffee # No
 ```
 
-The test frameworks are advanced enough to look for the right files.
+The word `test` is a good visual lead in editors and it also helps to distinguish files containing actual tests from files with helpers and shared behaviors.
 
 <a name="functions"/>
 ## Functions
