@@ -321,19 +321,19 @@ _privateMethod: ->
 <a name="file_names"/>
 ### File names
 
-Use camelCase for naming files:
+Use `dashes` for naming files:
 
 ```
-userRights.coffee
-privateTraffic.coffee
+user-rights.coffee
+private-traffic.coffee
 ```
 
 Use `-test` suffixes for naming test files:
 
 ```
-tests/userRights-test.coffee # Yes
-tests/userRights.coffee # No
-tests/userRightsTest.coffee # No
+tests/user-rights-test.coffee # Yes
+tests/user-rights.coffee # No
+tests/user_rights_test.coffee # No
 ```
 
 The word `test` is a good visual lead in editors and it also helps to distinguish files containing actual tests from files with helpers and shared behaviors.
