@@ -321,7 +321,7 @@ _privateMethod: ->
 <a name="file_names"/>
 ### File names
 
-Use `dashes` for naming files:
+Use dashes for naming files:
 
 ```
 user-rights.coffee
