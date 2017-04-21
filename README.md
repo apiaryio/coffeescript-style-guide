@@ -47,20 +47,24 @@ The details in this guide have been very heavily inspired by several existing st
     * [Miscellaneous](#miscellaneous)
     * [Optimization](#optimization)
 
-<a name="code_layout"/>
+<a name="code_layout"></a>
+
 ## Code layout
 
-<a name="tabs_or_spaces"/>
+<a name="tabs_or_spaces"></a>
+
 ### Tabs or Spaces?
 
 Use **spaces only**, with **2 spaces** per indentation level. Never mix tabs and spaces.
 
-<a name="maximum_line_length"/>
+<a name="maximum_line_length"></a>
+
 ### Maximum Line Length
 
 Limit all lines to a maximum of 79 characters.
 
-<a name="blank_lines"/>
+<a name="blank_lines"></a>
+
 ### Blank Lines
 
 Separate top-level function and class definitions with two blank lines.
@@ -71,12 +75,14 @@ Use a single blank line within the bodies of methods or functions in cases where
 
 In tests, separate major blocks (i.e., `Feature`, `Scenario`, `describe`) by two blank lines.
 
-<a name="trailing_whitespace"/>
+<a name="trailing_whitespace"></a>
+
 ### Trailing Whitespace
 
 Do not include trailing whitespace on any lines.
 
-<a name="optional_commas"/>
+<a name="optional_commas"></a>
+
 ### Optional Commas
 
 Avoid the use of commas before newlines when properties or elements of an Object or Array are listed on separate lines.
@@ -117,7 +123,8 @@ moveTo(10
 )
 ```
 
-<a name="optional_braces"/>
+<a name="optional_braces"></a>
+
 ### Optional Braces
 
 Avoid use of braces in multi-line object literals:
@@ -165,12 +172,14 @@ Avoid extraneous whitespace in one-line object literals:
 { color: 'blue', size: 42 } # No
 ```
 
-<a name="encoding"/>
+<a name="encoding"></a>
+
 ### Encoding
 
 UTF-8 is the only allowed source file encoding.
 
-<a name="module_imports"/>
+<a name="module_imports"></a>
+
 ## Module Imports
 
 If using a module system (CommonJS Modules, AMD, etc.), `require` statements should be placed on separate lines.
@@ -193,7 +202,8 @@ mod = require('module') # Yes
 mod = require('module.coffee') # No
 ```
 
-<a name="whitespace"/>
+<a name="whitespace"></a>
+
 ## Whitespace in Expressions and Statements
 
 Avoid extraneous whitespace in the following situations:
@@ -243,7 +253,8 @@ Additional recommendations:
            fooBar = 3
         ```
 
-<a name="comments"/>
+<a name="comments"></a>
+
 ## Comments
 
 If modifying code that is described by an existing comment, update the comment such that it accurately reflects the new code. (Ideally, improve the code to obviate the need for the comment, and delete the comment entirely.)
@@ -252,7 +263,8 @@ The first word of the comment should be capitalized, unless the first word is an
 
 If a comment is short, the period at the end can be omitted.
 
-<a name="block_comments"/>
+<a name="block_comments"></a>
+
 ### Block Comments
 
 Block comments apply to the block of code that follows them.
@@ -274,7 +286,8 @@ Paragraphs inside of block comments are separated by a line containing a single 
   stop()
 ```
 
-<a name="inline_comments"/>
+<a name="inline_comments"></a>
+
 ### Inline Comments
 
 Inline comments are placed on the line immediately above the statement that they are describing. If the inline comment is sufficiently short, it can be placed on the same line as the statement (separated by a single space from the end of the statement).
@@ -297,7 +310,8 @@ However, inline comments can be useful in certain scenarios:
   x = x + 1 # Compensate for border
 ```
 
-<a name="naming_conventions"/>
+<a name="naming_conventions"></a>
+
 ## Naming Conventions
 
 Use `camelCase` (with a leading lowercase character) to name all variables, methods, and object properties.
@@ -318,7 +332,8 @@ Methods and variables that are intended to be "private" should begin with a lead
 _privateMethod: ->
 ```
 
-<a name="file_names"/>
+<a name="file_names"></a>
+
 ### File names
 
 Use dashes for naming files:
@@ -338,7 +353,8 @@ tests/user_rights_test.coffee # No
 
 The word `test` is a good visual lead in editors and it also helps to distinguish files containing actual tests from files with helpers and shared behaviors.
 
-<a name="functions"/>
+<a name="functions"></a>
+
 ## Functions
 
 _(These guidelines also apply to the methods of a class.)_
@@ -366,6 +382,8 @@ In cases where method calls are being chained and the code does not fit on a sin
   .filter((x) -> x < 11)
   .reduce((x, y) -> x + y)
 ```
+
+<a name="functions-parentheses"></a>
 
 When calling functions, **never omit parentheses**. It is a strict and strong rule, but it deals with significant majority of ambiguous cases and problems you can find in CoffeeScript:
 
@@ -439,7 +457,8 @@ Do not use inline functions unless they're very short and simple:
 (x) -> if true then 42 else (x + x)
 ```
 
-<a name="deconstructions"/>
+<a name="deconstructions"></a>
+
 ## Deconstructions
 
 Keep deconstructions one-line unless they are too many:
@@ -486,7 +505,8 @@ object.four
 
 The same rules apply to array deconstructions.
 
-<a name="strings"/>
+<a name="strings"></a>
+
 ## Strings
 
 Use string interpolation instead of string concatenation:
@@ -528,7 +548,8 @@ if condition
     '''
 ```
 
-<a name="conditionals"/>
+<a name="conditionals"></a>
+
 ## Conditionals
 
 Favor `unless` over `if` for negative conditions, but preferably only for short, almost one-line conditionals.
@@ -594,7 +615,8 @@ if (thing > 42 and ...) and (thing.color is 'green' or ...)
   ...
 ```
 
-<a name="looping_and_comprehensions"/>
+<a name="looping_and_comprehensions"></a>
+
 ## Looping and Comprehensions
 
 Take advantage of comprehensions whenever possible:
@@ -645,21 +667,24 @@ object[v] = k for k, v of data
 (if val.length then arr.push (i for i, j of val)) for val in things
 ```
 
-<a name="extending_native_objects"/>
+<a name="extending_native_objects"></a>
+
 ## Extending Native Objects
 
 Do not modify native objects.
 
 For example, do not modify `Array.prototype` to introduce `Array#forEach`.
 
-<a name="exceptions"/>
+<a name="exceptions"></a>
+
 ## Exceptions
 
 Do not suppress exceptions.
 
 Never throw exceptions in asynchronous flow. Use first callback parameter for passing an error object.
 
-<a name="annotations"/>
+<a name="annotations"></a>
+
 ## Annotations
 
 Use annotations when necessary to describe a specific action that must be taken against the indicated block of code.
@@ -692,7 +717,8 @@ Annotation types:
 
 If a custom annotation is required, the annotation should be documented in the project's README.
 
-<a name="idioms"/>
+<a name="idioms"></a>
+
 ## Idioms
 
 From [Zen of Python][zen-of-python]:
@@ -714,7 +740,8 @@ And more:
 - Consistency counts.
 - DRY counts.
 
-<a name="readability"/>
+<a name="readability"></a>
+
 ### Readability
 
 Strive for readability. Your code is going to be written once, but read many, many times.
@@ -728,12 +755,14 @@ included = !!~ 'a long test string'.indexOf 'test' # No
 
 Ignore those parts of other guidelines which recommend to go against readability (i.e., [The Little Book on CoffeeScript][idioms]).
 
-<a name="dry"/>
+<a name="dry"></a>
+
 ### DRY
 
 Strive for DRY, but mind that [premature DRY is the same evil as premature optimization][dry].
 
-<a name="async"/>
+<a name="async"></a>
+
 ### Asynchronous flow
 
 Unless specified otherwise, handle asynchronous flow using [async.js][async] library instead of nested callbacks:
@@ -821,12 +850,14 @@ flow = (args, cb) ->
   ], cb
 ```
 
-<a name="standard_library"/>
+<a name="standard_library"></a>
+
 ### Filling gaps in standard library
 
 Use [Underscore.js][underscore] when you're missing some very basic features (e.g., for object and array manipulation) and they're not present in standard library.
 
-<a name="miscellaneous"/>
+<a name="miscellaneous"></a>
+
 ## Miscellaneous
 
 `and` is preferred over `&&`.
@@ -877,7 +908,8 @@ console.log args... # Yes
 (a, b, c, rest...) -> # Yes
 ```
 
-<a name="optimization"/>
+<a name="optimization"></a>
+
 ## Optimization
 
 Use explicit empty `return` statements to preserve performance in case large objects would be returned unnecessarily (e.g., results of loops).
