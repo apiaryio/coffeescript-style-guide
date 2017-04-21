@@ -383,6 +383,8 @@ In cases where method calls are being chained and the code does not fit on a sin
   .reduce((x, y) -> x + y)
 ```
 
+<a name="functions-parentheses"></a>
+
 When calling functions, **never omit parentheses**. It is a strict and strong rule, but it deals with significant majority of ambiguous cases and problems you can find in CoffeeScript:
 
 ```coffeescript
